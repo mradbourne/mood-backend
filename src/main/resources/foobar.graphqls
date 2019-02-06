@@ -1,0 +1,18 @@
+type Query {
+    people(mood: Mood): [Person]
+}
+
+type Person {
+    id: Int
+    currentmood: Mood
+    name: String
+    age: Int
+}
+
+enum Mood {
+    HAPPY
+    NEUTRAL
+    SAD
+    ANGRY
+    CONFUSED
+}
