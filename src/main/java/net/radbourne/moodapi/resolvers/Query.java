@@ -12,10 +12,15 @@ import org.springframework.stereotype.Component;
 public class Query implements GraphQLQueryResolver {
     private final PersonRepository PersonRepository;
 
-    public Iterable<Person> people(Mood mood) {
+    public Iterable<Person> people(Mood mood, boolean negate) {
         if (mood == null) {
             return PersonRepository.findAll();
         }
+
+        if (negate) {
+            return PersonRepository.findByCurrentmoodNot(mood);
+        }
+
         return PersonRepository.findByCurrentmood(mood);
     }
 }

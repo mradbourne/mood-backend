@@ -1,5 +1,5 @@
 type Query {
-    people(mood: Mood): [Person]
+    people(mood: Mood, negate: Boolean): [Person]
 }
 
 type Person {
