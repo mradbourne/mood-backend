@@ -2,11 +2,21 @@ type Query {
     people(mood: Mood, negate: Boolean): [Person]
 }
 
+type Mutation {
+    createPerson(input: CreatePersonInput!): Person!
+}
+
 type Person {
     id: Int
     currentmood: Mood
     name: String
     age: Int
+}
+
+input CreatePersonInput {
+    currentmood: Mood!
+    name: String!
+    age: Int!
 }
 
 enum Mood {
