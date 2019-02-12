@@ -4,7 +4,6 @@ import net.radbourne.moodapi.enums.Mood;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "people")
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
