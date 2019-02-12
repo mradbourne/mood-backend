@@ -4,6 +4,7 @@ type Query {
 
 type Mutation {
     createPerson(input: CreatePersonInput!): Person!
+    deletePerson(id: Int!): Int
 }
 
 type Person {

@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface PersonRepository extends CrudRepository<Person, Long> {
     Iterable<Person> findByCurrentmood(Mood mood);
     Iterable<Person> findByCurrentmoodNot(Mood mood);
+    Iterable<Person> deleteById(long id);
 }

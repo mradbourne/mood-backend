@@ -18,4 +18,9 @@ public class Mutation implements GraphQLMutationResolver {
         Person newPerson = new Person(input.getName(), input.getAge(), input.getCurrentmood());
         return PersonRepository.save(newPerson);
     }
+
+    public long deletePerson(long id) {
+        PersonRepository.deleteById(id);
+        return id;
+    }
 }
